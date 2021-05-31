@@ -27,6 +27,7 @@
             android:text="@string/no_gps_screen_title"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="17sp" />
         <View
             android:layout_width="match_parent"
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:text="@string/no_gps_screen_message"
             android:layout_marginTop="10dp"
             android:textSize="14sp" />

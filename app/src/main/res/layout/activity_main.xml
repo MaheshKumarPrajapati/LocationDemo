@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
 
-        <TextView
+      <TextView
             android:id="@+id/tv_screen_heading"
             style="@style/main_heading"
             android:layout_marginTop="40dp"
@@ -71,4 +71,5 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <include layout="@layout/error_gps"/>
+    <include layout="@layout/progress_screen"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
