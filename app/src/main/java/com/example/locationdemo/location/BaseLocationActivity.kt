@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 open class BaseLocationActivity: AppCompatActivity() {
-    private lateinit var locationUtility: LocationHelper
+    private lateinit var locationHelper: LocationHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +21,10 @@ open class BaseLocationActivity: AppCompatActivity() {
     }
 
     private fun setUpLocation() {
-        locationUtility = LocationHelper(this)
-        locationUtility.startLocationClient()
-        lifecycle.addObserver(locationUtility)
-        locationUtility.currentLocation.observe(this, androidx.lifecycle.Observer {
+        locationHelper = LocationHelper(this)
+        locationHelper.startLocationClient()
+        lifecycle.addObserver(locationHelper)
+        locationHelper.currentLocation.observe(this, androidx.lifecycle.Observer {
             updatedLocation(it)
         })
     }
@@ -43,7 +43,7 @@ open class BaseLocationActivity: AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        lifecycle.removeObserver(locationUtility);
+        lifecycle.removeObserver(locationHelper);
         super.onDestroy()
     }
 
@@ -70,12 +70,12 @@ open class BaseLocationActivity: AppCompatActivity() {
             resultCode: Int,
             data: Intent?
     ) {
-        locationUtility.onActivityResult(requestCode, resultCode, data)
+        locationHelper.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
     }
 
 
-    open fun turnOnLocation(){ locationUtility.checkLocationSettings()}
+    open fun turnOnLocation(){ locationHelper.checkLocationSettings()}
 
     open fun updatedGpsStatus(statusOfGPS: Boolean) {}
 
@@ -88,7 +88,7 @@ open class BaseLocationActivity: AppCompatActivity() {
             requestCode: Int, permissions: Array<String>,
             grantResults: IntArray
     ) {
-        locationUtility.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        locationHelper.onRequestPermissionsResult(requestCode, permissions, grantResults)
         super.onRequestPermissionsResult(requestCode, permissions, grantResults) // redirects to utils
     }
 
