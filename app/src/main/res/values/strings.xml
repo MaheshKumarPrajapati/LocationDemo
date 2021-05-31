@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LocationDemo</string>
+    <string name="no_gps_screen_title"> GPS turned off</string>
+    <string name="no_gps_screen_message">Allow app to turn on your phone GPS for accurate task location.</string>
+    <string name="no_gps_screen_button">Turn On GPS</string>
 </resources>
