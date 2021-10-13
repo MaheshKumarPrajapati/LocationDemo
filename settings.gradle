@@ -1,1 +1,2 @@
+include ':GeoCoordinates'
 include ':app'
